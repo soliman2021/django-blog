@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+All My Posts
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog/post.css" %}"/>
+<link rel="stylesheet" href="{% static "blog/all-posts.css" %}"/>
+{% endblock css_files %}
+
+{% block content %}
+
+
+
+
+<section id="all-posts">
+    <h2>My Collected Posts</h2>
+
+    <ul>
+        {% for post in posts  %}
+            {% include "blog/includes/post.html" %}        
+        {% endfor %}
+
+    </ul>
+
+</section>
+
+<section id="latest-posts">
+    <h2>
+        My latest Thoughts
+    </h2>
+
+    <ul>
+        <li>
+            <article class="post">
+                <a href="">
+                    <img style="width: 90%;" src="{%static "/blog/images/2.jpg"%}" alt="Mountain Hiking"/>
+                    <div class="post__content">
+                        <h3>
+                        Mountain Hiking
+                        </h3>
+                        <p>
+                        There is nothing like a mountain hiking
+                        </p>
+                    </div>
+            </article>
+        </li>
+    </ul>
+</section>
+
+<section id="about">
+    <h2>
+        What I do
+    </h2>
+    <p>
+        Development
+    </p>
+    <p>
+    conding
+    </p>
+</section>
+
+{% endblock content %}
+
